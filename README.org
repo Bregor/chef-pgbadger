@@ -11,13 +11,15 @@
 
 ** Attributes
 *** pgbadger::default
-|------------------------+--------+---------------------------------------------------------------------------+---------------------|
-| Key                    | Type   | Description                                                               | Default             |
-|------------------------+--------+---------------------------------------------------------------------------+---------------------|
-| [pgbadger][databases]  | Array  | List of databases to perform. All if empty.                               | []                  |
-| [pgbadger][report_dir] | String | Path for generated reports                                                | "/var/www/pgbadger" |
-| [pgbadger][rhytm]      | String | Periodicity of reports generation. E.g. =horly=, =daily=, =monthly=, etc. | "hourly"            |
-|------------------------+--------+---------------------------------------------------------------------------+---------------------|
+|-----------------------+--------+---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------|
+| Key                   | Type   | Description                                                               | Default                                                                                      |
+|-----------------------+--------+---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------|
+| [pgbadger][databases] | Array  | List of databases to perform.                                             | []                                                                                           |
+| [pgbadger][data_dir]  | String | Path for generated reports                                                | "/var/www/pgbadger"                                                                          |
+| [pgbadger][log_path]  | String | Path to PostgreSQL log                                                    | "/var/log/postgresql/postgresql-#{node[:postgresql][:defaults][:server][:version]}-main.log" |
+| [pgbadger][rhytm]     | String | Periodicity of reports generation. E.g. =horly=, =daily=, =monthly=, etc. | "hourly"                                                                                     |
+| [pgbadger][user]      | String | Reports owner                                                             | "root"                                                                                       |
+|-----------------------+--------+---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------|
 
 ** Usage
 *** pgbadger::default
