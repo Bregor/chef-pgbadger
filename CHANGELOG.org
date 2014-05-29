@@ -1,0 +1,6 @@
+* pgbadger CHANGELOG
+
+  This file is used to list changes made in each version of the pgbadger cookbook.
+
+** 0.0.1
+  - [Maxim Filatov] - Initial release of pgbadger
