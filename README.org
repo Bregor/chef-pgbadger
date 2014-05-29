@@ -1,0 +1,48 @@
+#+TITLE: PgBadger Cookbook
+#+OPTIONS: toc:nil num:nil ^:nil
+
+* PgBadger Cookbook
+  Installs/configures [[http://dalibo.github.io/pgbadger/][PgBadger]]
+
+** Requirements
+
+** packages
+  - =perl= - pgbadger needs only perl to run
+
+** Attributes
+*** pgbadger::default
+|------------------------+--------+---------------------------------------------------------------------------+---------------------|
+| Key                    | Type   | Description                                                               | Default             |
+|------------------------+--------+---------------------------------------------------------------------------+---------------------|
+| [pgbadger][databases]  | Array  | List of databases to perform. All if empty.                               | []                  |
+| [pgbadger][report_dir] | String | Path for generated reports                                                | "/var/www/pgbadger" |
+| [pgbadger][rhytm]      | String | Periodicity of reports generation. E.g. =horly=, =daily=, =monthly=, etc. | "hourly"            |
+|------------------------+--------+---------------------------------------------------------------------------+---------------------|
+
+** Usage
+*** pgbadger::default
+TODO: Write usage instructions for each cookbook.
+
+e.g.
+Just include =pgbadger= in your node's =run_list=:
+
+#+BEGIN_SRC javascript
+{
+  "name":"my_node",
+  "run_list": [
+    "recipe[pgbadger]"
+  ]
+}
+#+END_SRC
+
+
+** Contributing
+1. Fork the repository on Github
+2. Create a named feature branch (like `add_component_x`)
+3. Write your change
+4. Write tests for your change (if applicable)
+5. Run the tests, ensuring they all pass
+6. Submit a Pull Request using Github
+
+** Authors
+   - Maxim Filatov <bregor@evilmartians.com>
