@@ -26,15 +26,25 @@
 |-----------------------+--------+---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------|
 
 ** Usage
-*** pgbadger::default
-TODO: Write usage instructions for each cookbook.
-
-e.g.
-Just include =pgbadger= in your node's =run_list=:
+*** pgbadger::install
+Just include =pgbadger::install= in your node's =run_list=:
 
 #+BEGIN_SRC javascript
 {
   "name":"my_node",
+  "run_list": [
+    "recipe[pgbadger::install]"
+  ]
+}
+#+END_SRC
+
+*** pgbadger::default
+Include =pgbadger= in your node's =run_list= and add list of databases to node attributes:
+
+#+BEGIN_SRC javascript
+{
+  "name":"my_node",
+  "pgbadger":{"databases":["lucifer","antropolog"]}, //thanks to Nate for naming
   "run_list": [
     "recipe[pgbadger]"
   ]
@@ -50,5 +60,7 @@ Just include =pgbadger= in your node's =run_list=:
 5. Run the tests, ensuring they all pass
 6. Submit a Pull Request using Github
 
+** Special thanks
+   Sponsored by [[http://evilmartians.com][Evil Martians]]
 ** Authors
    - Maxim Filatov <bregor@evilmartians.com>
