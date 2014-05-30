@@ -1,0 +1,33 @@
+#
+# Cookbook Name:: pgbadger
+# Recipe:: web
+#
+# Author: Maxim Filatov <bregor@evilmartians.com>
+# Copyright 2014, Evil Martians
+#
+# Some rights reserved - Redistribute As You Please
+#
+
+template "#{node['pgbadger']['data_dir']}/index.html" do
+  source "index.html.erb"
+  owner node['pgbadger']['user']
+  group node['pgbadger']['user']
+  mode 0644
+  variables(databases: node['pgbadger']['databases'])
+end
+
+template "#{node['pgbadger']['data_dir']}/style.css" do
+  source "style.css.erb"
+  owner node['pgbadger']['user']
+  group node['pgbadger']['user']
+  mode 0644
+end
+
+pgbadger_users = search(:pgbadger_users) rescue []
+template "#{node['pgbadger']['data_dir']}/.passwd" do
+  source "passwd.erb"
+  owner node['pgbadger']['user']
+  group node['pgbadger']['user']
+  mode 0644
+  variables(users: pgbadger_users)
+end

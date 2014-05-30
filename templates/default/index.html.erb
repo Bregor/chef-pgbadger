@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>pgBadger :: Global Index on incremental reports</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="robots" content="noindex,nofollow">
+    <meta http-equiv="Generator" content="Opscode Chef">
+    <meta http-equiv="Date" content="<%= Time.now.strftime("%a %b %d %T %Y") %>">
+    <link rel="shortcut icon" href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIiIiAAAAAAA////BxQUFH0FBQWyExMT4wQEBM4ODg7DFRUVe/T09AsAAAAAg4ODAAAAAAAAAAAAAAAAAFJSUgAAAAAAKioqcQICAv9aWlr/MjIy/omJif6Li4v+HR0d/ldXV/8DAwP/Ly8veAAAAABZWVkAAAAAAF9fXwAAAAAAKioqvh4eHv/n5+f/qqqq/s3Nzf4FBQX/AAAA/5KSkv+Kior/6urq/h0dHf8uLi7DAAAAAG1tbQAAAAAAJiYmeCEhIf//////6enp/iMjI//t7e3/l5eX/2dnZ//U1NT/S0tL/9XV1f7/////Hx8f/y8vL34AAAAAvb29HAEBAf/s7Oz+3d3d/j09Pf9TU1P/JCQk//z8/P//////oaGh/xsbG/95eXn/+Pj4/unp6f4DAwP/vLy8GiQkJJJjY2P95+fn/1NTU/9ubm7/UFBQ/yEhIf/m5ub//f39/yEhIf8SEhL/h4eH/4yMjP//////YWFh/w4ODn8CAgLLv7+//09PT/68vLz/ZGRk/zQ0NP8sLCz/9/f3/+Hh4f9gYGD/hYWF/0VFRf9nZ2f//v7+/rm5uf4CAgLLCwsL9efn5/9zc3P/dHR0/wUFBf8MDAz/ampq///////9/f3/FBQU/0BAQP88PDz/WFhY//Ly8v/j4+P+AAAA1QAAANyFhYX+5+fn/09PT/8AAAD/AgIC/9jY2P/+/v7//////y4uLv8AAAD/AAAA/5ycnP+Kior/6Ojo/gQEBOkAAADKVVVV/xgYGP8AAAD/AAAA/yAgIP///////v7+//////87Ozv/AAAA/wAAAP8wMDD/OTk5/7+/v/4AAADMJiYmn5mZmf0AAAD+AAAA/wAAAP9BQUH///////7+/v//////KCgo/wAAAP8AAAD/AAAA/5CQkP9ubm7+MjIynzMzMyFFRUX/zc3N/zw8PP4DAwP/BgYG/9bW1v//////mJiY/wAAAP8AAAD/AAAA/wAAAP5gYGD+BAQE/0JCQiMAAAAAIiIishEREf719fX+6Ojo/3Jycv9XV1f/ZGRk/3d3d/+5ubn/WVlZ/2dnZ/7MzMz+xMTE/h4eHrIAAAAATU1NAAAAAAALCwvhSUlJ/v7+/v7////+//////////////////////////+YmJj/QUFB/g8PD+EAAAAAVVVVAAAAAAAAAAAA////AR8fH70GBgb/goKC/tzc3P7////+/////9zc3P6CgoL+BgYG/xsbG7YAAAAAAAAAAAAAAAAAAAAAAAAAAD8/PwAAAAAARkZGNBkZGa4ODg73AAAA/wAAAP8NDQ31GhoasWFhYUAAAAAAOzs7AAAAAAAAAAAA/D8AAPAPAADAAwAAwAMAAIABAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAQAAgAEAAMADAADgBwAA+B8AAA" />
+
+
+
+
+    <meta name="viewport" content="user-scalable=no, initial-scale = 1, minimum-scale = 1, maximum-scale = 1, width=device-width">
+    <style type="text/css"></style>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+	<div class="container-fluid">
+	  <a data-placement="bottom" rel="tooltip" data-original-title="PostgreSQL log analyzer" href="" id="pgbadger-brand" class="brand"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAhCAYAAABX5MJvAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAAD2AAAA9gBbkdjNQAAAAd0SU1FB90JGRQtL9Khsy8AAAeJSURBVFjDnVh5SFVvGn7O1coQuz+vmbklmfv8XIIr5oaB0aQtFiUuZeolJAvNJpipbDMNsyAr2zW8YwWaaDFqUUMS1FjmjiEtanmdUjIttMUszzN/TOfiyatZH1zOd873Ls/3fu/yvVfATwZJCIIAktOTkpJS29vblw0ODoa+fPkS/f39ejoLCws4OjpCEITrXl5ej/Lz8/8pCMJrif+3Bknpae3p6XlWqVQSwFR+IgCamppyxYoVt0jOHStvyqO9vR0AsHjx4ix7e3uZgsTERGq1WjY0NHBoaIgkOTQ0xIaGBmq1Wmo0Ghkoe3t7hoSE7AWAp0+fTg3A9u3bQdI6ICDgv9KuVCoVL126xF8ZRUVFVKlUejDe3t4tJJVpaWmTAzhy5Aj27t07V6VSvZYAHDx4kCQpiqLsOdH4kS4jI0MCMmpubv7q9OnTlnl5eYYB9Pb2gqSJra2tBECsqakZJ3wyxdJceg8KCuLSpUuZmprKxMREKhSKUTs7u1ckZ7x9+9YwELVaXS9ZQKfTGdz96Ogou7q62N/fPykgHx8f5uXlyda+fv1KCwsL0dfX94FBAFFRUX+Xzi8oKIgXLlzQM3d0dDApKYkKhcJgRHh4eDA5OZnHjh2jVqulv78/AdDBwYFpaWnMyMjgmzdvKIoi9+/fTwBMSEjYPS4UXV1dCUAMDQ1lbm4uc3NzOX/+fG7evHmc0pycHD3AiooKOjs7Tyl8BwcHOW/ePAIQHRwcvpA00oeui4tLKgCWl5eTJIeHh3nixAkGBwePE3T58mWD5ndzc/spiBkzZnDHjh0UBIEA6OLi8jc9CLVaLUZHR5OkuHLlygmFWFlZGfQBURRZXV09JWuQ5OHDhwmAS5Ys+T+CxsbGcADUaDQsKiqaVMDq1asnjZSfAUhPT+f9+/fZ2dmpz6wNDQ1/ha2t7T6JKD4+flIhPj4+k0bE7NmzJ+Xv7u6mIAi8fv06/fz8CICOjo6Zip6eHisA3LRpE+bOnTtpMmtubjb4XSpQNjY2E/KePXsWgYGBCA0NRUREBJYtWwYA6OzsVCqsra3NAQgjIyOorKwESZw6dQpWVlYGhVVVVU2o6OPHjwa/+/v7Q6lUQqfT4erVqwAAS0tLAIC3t7caSqWyFAArKiq4fv16VlZWUhRFDg8PGzTpxo0bJ8yc06ZNM8jz7t07BgQEMDg4WE9bXl5OALSxsamFvb29CIA1NTV88OAB1Wr1Tx3ty5cv43zi27dvBmlTUlI4OjpKADx58qSep6amhgBoaWnZqbCyshoEwI6ODixatAj19fUYHBwEANja2ho0b1ZWFn68I1RXV+vna9euRVhYGADA09MTWq0WALBlyxaQBEl0dHTg+4YeKQYGBmoACFJBWbJkCc6fPw8AWLhwIQBg+fLlGFuCDx06JHNIQRDQ1tamXy8rK0NBQQEWLFiA169fo7+/H+7u7jAyMoIgCBAEAd/1CUNDQ72K9+/f676HDwAgMjISFy9eBAA4OzsDAM6cOYPS0lIAgImJCURRRGlpqcwSHz58wLZt22BnZwcAMDY2Rl9fH0ZGRtDX16e3jMTT3d1NADA3NzdBSEjITgA0MzPTn5e1tTULCgr47NkzAuCGDRvY2trK5ORkfv78mQC4Z88emV9kZmYyMjKSnz594sOHD6lWqwmA165do4eHB1tbW2VJzszMjAAYGhr6D5B0knJ5S0sLRVFkW1sbAbCsrIy1tbX6RHXgwAGmpqYSAHft2iVzzJKSknFO6eDgQJK0t7eX0TY3NxOAaGxsTJLTAAABAQFdAMS4uDg94b179wiAaWlpfPXqFadPny5TkJmZOS5EjY2NZTQvXrxgQkICi4uLZXQxMTEEQFdX11v688zLy9skMT5//lxvtpaWFioUCkZERLC+vl6mYKxgqYiVlpbq11NTU/n48WN6eHjI6J48eaKnyc3N3fTjreoxAHFsfRBFkT09PVQqlQwLC+POnTsJgPv27ZswYWVnZxMAd+/eTScnJw4PD8t8wcvLiwDEwMDAdhmA/Px8xMbG/ik5S0JCgjgWSG9vL2fOnEk3Nzemp6fLlN68eZPFxcW8c+fOOHPX1dXJAMTFxYkAOGvWLGo0mj9LSkrGJ6HY2Nj1kqmys7NlFnn06JH+PkDSYMWNj48nSUZHR+vnP1rou5+lTdpxhYWF/UsijoqKEseW6vDwcDY2NpIk//jjj3Egtm7dSp1OR0EQZLfu6OhoUaJZs2bNrUk7Mmlh3bp1EhDRzc2NdXV1JMmBgQGampqyq6uLvb29MiAajYadnZ1UKBS8e/cuSbK2tlZ27YuJifn3L/WgycnJUd99RAQgrlq1ijdu3GBTUxMBsLCwkCSp0+lIkoWFhTQyMuLRo0d5+/ZthoeH61tHMzMzpqSkJP9WU5yTk2Pr6+v7H6mDGnvDkuZz5szRz5VKJU1MTGRHFBgY2JyVlTUfvzvOnTsHAMjMzPyLu7t7lamp6ccfu29D70qlks7OzsXHjx8PAqAviBONX/7jIDY2NqKqqkoJYKGTk5O/KIrKpqamSpVKZWZubv7Wz8/vxZUrVwoFQRCnKvN/nFtImuwxPYkAAAAASUVORK5CYII"> Global Index of pgBadger incremental reports</a>
+	</div>
+      </div>
+    </nav>
+
+    <div id="top"><br /><br /></div>
+    <div class="container" id="main-container">
+
+      <style type="text/css">
+      </style>
+
+
+      <h1>List of databases:</h1>
+      <table class="table table-condensed">
+	<% @databases.each do |db| %>
+	<tr>
+	  <td>
+	    <span class="span3">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <i class="fa fa-cogs fa-2x pull-left fa-border"></i>&nbsp;<h2><a href="<%= db %>/index.html"><%= db.capitalize %></a></h2>
+                </div>
+	    </span>
+	  </td>
+	</tr>
+<% end -%>
+      </table>
+
+      </div>
+
+      <footer>
+	<div class="">
+	  <small class="pull-right">Report generated by <a href="http://dalibo.github.com/pgbadger/" target="_new">pgBadger 5.1.</a></small>
+	</div>
+      </footer>
+
+      <div id="littleToc">
+	<div id="littleTocTitle"><a href="#top">&nbsp;^&nbsp;</a></div>
+      </div>
+
+  </body>
+</html>
