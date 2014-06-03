@@ -51,7 +51,15 @@ Include =pgbadger= in your node's =run_list= and add list of databases to node a
 }
 #+END_SRC
 
-
+*** pgbadger::web
+Include =pgbadger::web= in your node's =run_list= and create data bag =pgbadger_users= with items like following:
+#+BEGIN_SRC javascript
+{
+  "id":"report_viewer",
+  "password":"superduperpassword"
+}
+#+END_SRC
+It will create file =.passwd= in =node[:pgbadger][:data_dir]= directory with user:password pairs, compatible with [[http://nginx.org/][NGINX]] and [[http://httpd.apache.org/][Apache]]
 ** Contributing
 1. Fork the repository on Github
 2. Create a named feature branch (like `add_component_x`)
