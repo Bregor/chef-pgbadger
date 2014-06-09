@@ -23,7 +23,7 @@ template "#{node['pgbadger']['data_dir']}/style.css" do
   mode 0644
 end
 
-pgbadger_users = search(:pgbadger_users) rescue []
+pgbadger_users = data_bag(:pgbadger_users).map {|user| data_bag_item('pgbadger_users', user)} rescue []
 template "#{node['pgbadger']['data_dir']}/.passwd" do
   source "passwd.erb"
   owner node['pgbadger']['user']
