@@ -1,6 +1,6 @@
 require_relative '../spec_helper'
 
-describe 'chef-pgbadger::web' do
+describe 'pgbadger::web' do
   let(:chef_run) do
     ChefSpec::Runner.new {|node| node.set[:postgresql][:defaults][:server][:version] = '9.2'}.converge(described_recipe)
   end
