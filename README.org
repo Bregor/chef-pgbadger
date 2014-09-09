@@ -72,3 +72,4 @@ It will create file =.passwd= in =node[:pgbadger][:data_dir]= directory with use
    Sponsored by [[http://evilmartians.com][Evil Martians]]
 ** Authors
    - Maxim Filatov <bregor@evilmartians.com>
+   - Kirill Kouznetsov <agon.smith@gmail.com>
