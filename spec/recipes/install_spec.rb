@@ -10,10 +10,12 @@ describe 'pgbadger::install' do
   it { is_expected.to include_recipe 'apt' }
 
   it do
-    is_expected.to add_apt_repository('obs_mrtns').with(
-      uri: 'http://download.opensuse.org/repositories/home:/evilmartians:/ubuntu/precise',
-      distribution: './',
-      key: 'http://download.opensuse.org/repositories/home:/evilmartians:/ubuntu/precise/Release.key'
+    is_expected.to add_apt_repository('mrtns').with(
+      uri: 'http://ppa.launchpad.net/evl.ms/evil/ubuntu',
+      distribution: 'precise',
+      components: ['main'],
+      key: 'B7AD0003',
+      keyserver: 'keyserver.ubuntu.com'
     )
   end
 

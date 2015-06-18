@@ -8,20 +8,14 @@
 # Some rights reserved - Redistribute As You Please
 #
 
+include_recipe 'apt'
 
-project_name = value_for_platform(
-    "ubuntu" => {
-      "14.04"   => "home:/evilmartians:/ubuntu14.04",
-      "default" => "home:/evilmartians:/ubuntu"
-    }
-  )
-
-include_recipe "apt"
-
-apt_repository "obs_mrtns" do
-  uri "http://download.opensuse.org/repositories/#{project_name}/#{node['lsb']['codename']}"
-  distribution "./"
-  key "http://download.opensuse.org/repositories/#{project_name}/#{node['lsb']['codename']}/Release.key"
+apt_repository 'mrtns' do
+  uri 'http://ppa.launchpad.net/evl.ms/evil/ubuntu'
+  distribution node['lsb']['codename']
+  components %w(main)
+  key 'B7AD0003'
+  keyserver 'keyserver.ubuntu.com'
 end
 
-package "pgbadger"
+package 'pgbadger'
