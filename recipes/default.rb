@@ -21,5 +21,4 @@ node['pgbadger']['databases'].each do |db|
     command "/usr/bin/pgbadger -q -I #{node['pgbadger']['log_path']} -O #{node['pgbadger']['data_dir']}/#{db} -d #{db}"
     user node['pgbadger']['user']
   end
-
 end

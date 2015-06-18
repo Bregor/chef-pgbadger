@@ -8,7 +8,6 @@
 # Some rights reserved - Redistribute As You Please
 #
 
-
 project_name = value_for_platform(
     "ubuntu" => {
       "14.04"   => "home:/evilmartians:/ubuntu14.04",
