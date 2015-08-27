@@ -4,7 +4,7 @@ maintainer_email 'bregor@evilmartians.com'
 license          'MIT'
 description      'Installs/Configures pgbadger'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.org'))
-version          '0.0.3'
+version          '0.0.4'
 supports         'ubuntu'
 depends          'cron'
 depends          'apt'

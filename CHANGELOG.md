@@ -16,3 +16,6 @@
 * [Kirill Kouznetsov] - ChefSpec confguration tuning; pretending to be Ubuntu 12.04 by default; test coverage enabled
 * [Kirill Kouznetsov] - spec files for recipes: default & install
 
+## 0.0.4 (2015-08-27)
+
+* [Maxim Filatov] - Recipes::Install: get rid of obs apt repo
