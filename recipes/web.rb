@@ -9,25 +9,30 @@
 #
 
 template "#{node['pgbadger']['data_dir']}/index.html" do
-  source "index.html.erb"
+  source 'index.html.erb'
   owner node['pgbadger']['user']
   group node['pgbadger']['user']
-  mode 0644
+  mode '0644'
   variables(databases: node['pgbadger']['databases'])
 end
 
 template "#{node['pgbadger']['data_dir']}/style.css" do
-  source "style.css.erb"
+  source 'style.css.erb'
   owner node['pgbadger']['user']
   group node['pgbadger']['user']
-  mode 0644
+  mode '0644'
 end
 
-pgbadger_users = data_bag(:pgbadger_users).map {|user| data_bag_item('pgbadger_users', user)} rescue []
+begin
+  pgbadger_users = data_bag(:pgbadger_users).map { |user| data_bag_item('pgbadger_users', user) }
+rescue StandardError
+  pgbadger_users = []
+end
+
 template "#{node['pgbadger']['data_dir']}/.passwd" do
-  source "passwd.erb"
+  source 'passwd.erb'
   owner node['pgbadger']['user']
   group node['pgbadger']['user']
-  mode 0644
+  mode '0644'
   variables(users: pgbadger_users)
 end

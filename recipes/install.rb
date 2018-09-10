@@ -8,5 +8,4 @@
 # Some rights reserved - Redistribute As You Please
 #
 
-
 package 'pgbadger'

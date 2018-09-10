@@ -2,7 +2,7 @@
 # vi: set ft=ruby :
 
 # Vagrantfile API/syntax version. Don't touch unless you know what you're doing!
-VAGRANTFILE_API_VERSION = "2"
+VAGRANTFILE_API_VERSION = '2'.freeze
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # All Vagrant configuration is done here. The most common configuration
@@ -10,7 +10,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # please see the online documentation at vagrantup.com.
 
   # Every Vagrant virtual environment requires a box to build off of.
-  config.vm.box = "chef/ubuntu-14.04"
+  config.vm.box = 'ubuntu-16.04'
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
@@ -90,23 +90,23 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.omnibus.chef_version = :latest
   config.berkshelf.enabled = true
 
-  config.vm.provision "chef_solo" do |chef|
+  config.vm.provision 'chef_solo' do |chef|
     chef.add_recipe 'pgbadger::install'
     chef.add_recipe 'pgbadger'
 
     # You may also specify custom JSON attributes:
     chef.json = {
-      postgresql:{
+      postgresql: {
         defaults: {
           server: {
-            version: '9.3'
-          }
-        }
+            version: '9.6',
+          },
+        },
       },
       pgbadger: {
-        databases: [ 'pgbadger_test_db' ],
-        log_path: '/var/log/postgresql/postgresql-9.3-main.log'
-      }
+        databases: ['pgbadger_test_db'],
+        log_path: '/var/log/postgresql/postgresql-9.3-main.log',
+      },
     }
   end
 
